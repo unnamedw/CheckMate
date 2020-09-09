@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.msg_b.checkmate.mainFragment.profileFragment.Sub2ProfileFragment">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.edmodo.rangebar.RangeBar
+            android:id="@+id/Rb_age"
+            android:layout_width="290dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="79dp" />
+
+        <TextView
+            android:id="@+id/Tv_leftInt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/Rb_age"
+            android:layout_marginBottom="-79dp"
+            android:layout_toStartOf="@+id/Tv_rightInt"
+            android:text="Left"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/Tv_rightInt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/Rb_age"
+            android:layout_alignEnd="@+id/Rb_age"
+            android:layout_marginBottom="-79dp"
+            android:text="Right"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/Rb_age"
+            android:layout_alignStart="@+id/Rb_age"
+            android:layout_marginBottom="-79dp"
+            android:text="나이" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/Rb_height"
+            android:layout_alignStart="@+id/Rb_age"
+            android:layout_marginBottom="-191dp"
+            android:text="키" />
+
+
+        <com.edmodo.rangebar.RangeBar
+            android:id="@+id/Rb_height"
+            android:layout_width="290dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="191dp" />
+
+        <TextView
+            android:id="@+id/Tv_leftInt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/Rb_height"
+            android:layout_toStartOf="@+id/Tv_rightInt2"
+            android:layout_marginBottom="-191dp"
+            android:text="Left"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/Tv_rightInt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/Rb_height"
+            android:layout_alignEnd="@+id/Rb_age"
+            android:layout_marginBottom="-191dp"
+            android:text="Right"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/Rb_age"
+            android:layout_centerVertical="true"
+            android:text="지역"
+            android:visibility="gone" />
+
+        <com.edmodo.rangebar.RangeBar
+            android:id="@+id/Rb_live"
+            android:layout_width="290dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="300dp" />
+
+        <TextView
+            android:id="@+id/Tv_leftInt3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/Rb_height"
+            android:layout_toStartOf="@+id/Tv_rightInt3"
+            android:layout_marginBottom="-300dp"
+            android:text="Left"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/Tv_rightInt3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/Rb_height"
+            android:layout_alignEnd="@+id/Rb_live"
+            android:layout_marginBottom="-300dp"
+            android:text="Right"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/Rb_live"
+            android:layout_alignStart="@+id/Rb_age"
+            android:layout_marginBottom="-300dp"
+            android:text="거리" />
+
+
+
+
+
+
+        <CheckBox
+            android:id="@+id/Cb_cb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView10"
+            android:layout_toEndOf="@+id/Cb_gw"
+            android:text="충북"
+            android:visibility="gone" />
+
+        <CheckBox
+            android:id="@+id/Cb_cn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView10"
+            android:layout_toEndOf="@+id/Cb_cb"
+            android:text="충남"
+            android:visibility="gone" />
+
+        <CheckBox
+            android:id="@+id/Cb_jb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/Rb_age"
+            android:layout_below="@+id/Cb_sw"
+            android:text="전북"
+            android:visibility="gone" />
+
+        <CheckBox
+            android:id="@+id/Cb_gn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Cb_cb"
+            android:layout_toEndOf="@+id/Cb_gb"
+            android:text="경남"
+            android:visibility="gone" />
+
+        <CheckBox
+            android:id="@+id/Cb_gb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Cb_cb"
+            android:layout_centerHorizontal="true"
+            android:text="경북"
+            android:visibility="gone" />
+
+        <CheckBox
+            android:id="@+id/Cb_jj"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/Tv_leftInt"
+            android:layout_below="@+id/Cb_cb"
+            android:layout_marginLeft="8dp"
+            android:text="제주"
+            android:visibility="gone" />
+
+        <CheckBox
+            android:id="@+id/Cb_etc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/Rb_age"
+            android:layout_below="@+id/Cb_jb"
+            android:text="해외"
+            android:visibility="gone" />
+
+        <CheckBox
+            android:id="@+id/Cb_jn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Cb_cb"
+            android:layout_toEndOf="@+id/Cb_sw"
+            android:text="전남"
+            android:visibility="gone" />
+
+        <CheckBox
+            android:id="@+id/Cb_sdg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView10"
+            android:layout_toEndOf="@+id/Cb_sw"
+            android:text="수도권"
+            android:visibility="gone" />
+
+        <CheckBox
+            android:id="@+id/Cb_gw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView10"
+            android:layout_toEndOf="@+id/Cb_sdg"
+            android:text="강원"
+            android:visibility="gone" />
+
+        <CheckBox
+            android:id="@+id/Cb_sw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/Rb_age"
+            android:layout_below="@+id/textView10"
+            android:text="서울"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/Tv_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="119dp"
+            android:text="내위치"
+            android:textSize="14sp"
+            android:textStyle="italic" />
+
+        <Button
+            android:id="@+id/Btn_location"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="40dp"
+            android:background="@color/colorPrimary"
+            android:text="위치설정"
+            android:textColor="@color/browser_actions_bg_grey"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+</FrameLayout>

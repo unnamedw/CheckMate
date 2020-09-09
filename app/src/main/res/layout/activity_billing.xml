@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.msg_b.checkmate.BillingActivity">
+
+    <Button
+        android:id="@+id/Btn_heart20"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_centerInParent="true"
+        android:background="@color/colorPrimary"
+        android:text="♥ 하트20개                          \1,900원"
+        android:textColor="@color/browser_actions_bg_grey" />
+
+    <Button
+        android:id="@+id/Btn_heart50"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/Btn_heart20"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorPrimary"
+        android:text="♥ 하트50개                          \4,500원"
+        android:textColor="@color/browser_actions_bg_grey" />
+
+    <Button
+        android:id="@+id/Btn_heart120"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/Btn_heart50"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorPrimary"
+        android:text="♥ 하트120개                       \9,900원"
+        android:textColor="@color/browser_actions_bg_grey" />
+
+    <Button
+        android:id="@+id/Btn_premium1"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="프리미엄 회원권 1개월           23,800원/월"
+        android:textColor="@color/browser_actions_bg_grey" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/Btn_premium1"
+        android:layout_alignStart="@+id/Btn_heart20"
+        android:layout_marginBottom="-60dp"
+        android:text="프리미엄 이용권 (좋아요 + 대화 무제한)" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/Btn_heart20"
+        android:layout_alignStart="@+id/Btn_heart20"
+        android:layout_marginBottom="20dp"
+        android:text="하트 구매하기" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Btn_heart120"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="(전 상품 VAT 포함)" />
+
+</RelativeLayout>

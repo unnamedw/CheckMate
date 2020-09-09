@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:layout_margin="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/Civ_profile"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:id="@+id/Tv_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="연결중"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/Civ_profile"
+            android:layout_marginTop="30dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Tv_status"
+            android:gravity="center"
+            android:layout_marginTop="60dp">
+
+            <Button
+                android:id="@+id/Btn_connect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorPrimary"
+                android:textColor="@color/browser_actions_bg_grey"
+                android:textStyle="bold"
+                android:text="연결"/>
+            <Button
+                android:id="@+id/Btn_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorAccent"
+                android:textColor="@color/browser_actions_bg_grey"
+                android:textStyle="bold"
+                android:text="종료"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+
+
+
+<!--원래 레이아웃-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone">
+
+
+        <TextView
+            android:id="@+id/room_edittext_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/room_description"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginBottom="8dp">
+
+            <EditText
+                android:id="@+id/room_edittext"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:maxLines="1"
+                android:imeOptions="actionDone"
+                android:inputType="text"/>
+
+            <ImageButton
+                android:id="@+id/connect_button"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:contentDescription="@string/connect_description"
+                android:background="@android:drawable/sym_action_call" />
+
+            <ImageButton
+                android:id="@+id/add_favorite_button"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:contentDescription="@string/add_favorite_description"
+                android:background="@android:drawable/ic_input_add" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/room_listview_description"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:lines="1"
+            android:maxLines="1"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/favorites"
+            android:gravity="center_vertical"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ListView
+                android:id="@+id/room_listview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawSelectorOnTop="false" />
+
+            <TextView
+                android:id="@android:id/empty"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/no_favorites" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

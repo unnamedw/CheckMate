@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/Civ_profile"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="15dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/Tv_me"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_below="@+id/Tv_nickname"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/me_border"
+        android:maxWidth="230dp"
+        android:text="TextView"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/Tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/Tv_me"
+        android:layout_toStartOf="@+id/Tv_me"
+        android:paddingEnd="5dp"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/Tv_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/Tv_me"
+        android:layout_alignTop="@id/Civ_profile"
+        android:text="TextView"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+</RelativeLayout>

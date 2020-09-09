@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/contact_name_call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttons_call_container"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="8dp"
+        android:textSize="24sp"
+        android:visibility="invisible" />
+
+    <LinearLayout
+        android:id="@+id/buttons_call_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/capture_format_text_call"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="32dp"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <ImageButton
+            android:id="@+id/button_call_disconnect"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/disconnect"
+            android:contentDescription="@string/disconnect_call"
+            android:visibility="invisible" />
+
+        <ImageButton
+            android:id="@+id/button_call_switch_camera"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="8dp"
+            android:background="@android:drawable/ic_menu_camera"
+            android:contentDescription="@string/switch_camera"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/Btn_exit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorAccent"
+            android:text="종료"
+            android:textColor="@color/browser_actions_bg_grey"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/button_call_scaling_mode"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/ic_action_return_from_full_screen"
+            android:contentDescription="@string/disconnect_call"
+            android:visibility="invisible" />
+
+        <ImageButton
+            android:id="@+id/button_call_toggle_mic"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="8dp"
+            android:background="@android:drawable/ic_btn_speak_now"
+            android:contentDescription="@string/toggle_mic"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/capture_format_text_call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/capture_format_slider_call"
+        android:layout_centerHorizontal="true"
+        android:text="@string/capture_format_change_text"
+        android:textSize="16sp"
+        android:visibility="invisible" />
+
+    <SeekBar
+        android:id="@+id/capture_format_slider_call"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="8dp"
+        android:progress="50"
+        android:visibility="invisible" />
+
+</RelativeLayout>

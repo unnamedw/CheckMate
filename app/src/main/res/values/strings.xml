@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">NovaProject1</string>
+    <string name="facebook_app_id">340475120051522</string>
+    <string name="fb_login_protocol_scheme">fb340475120051522</string>
+    <string name="kakao_app_key">6a62858d2b25c40ade70709a4ec5ac67</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="FACEBOOK_APP_ID">340475120051522</string>
+    <string name="ACCOUNT_KIT_CLIENT_TOKEN">90624446b47f7bb2de036a37cf3abc39</string>
+    <string name="item_money">item_money</string>
+    <string name="test">test</string>
+
+    <string name="GOOGLE_PLAY_CONSOLE_KEY">MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhdFCm1rQjCZ85Y+cIHkZDBjbFYJLUP7n0j15Jjdo/SQ5M/Aj6o6+Cxu3BIW7oTJsCzdHlMbGy5z/OTxDVN6domM/8ETQUvt0ppQ0Vtx//Op2Xx8MPt5MEknk5S7T4DzsKftMw60k2zGlH/lOm/NrDXpeSu15kbSCNSYVbykq0js5FCSjB3FbotyI4nPMWcPrEPj9yqgOzz8D65xSi6PVkBUUXKa75RAQkF9I04Yj2wJIpRWPIabOCU4QUm2rozeTTcAMliVC9ef1u7OTsfwQPX8D/neOQ9mjgkHeIKOoEupRuE78THaHmOtF7t0Ty8TXKkmD+3AJdyiCegajXBgGiQIDAQAB</string>
+
+
+</resources>
+
+

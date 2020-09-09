@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.msg_b.checkmate.mainFragment.ProfileLegacyFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="#efeded">
+
+                <TextView
+                    android:id="@+id/Tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="내 프로필"
+                    android:textSize="15dp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/Iv_profile"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/Iv_edit"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="80dp"
+                        android:layout_marginStart="80dp"
+                        android:layout_marginTop="76dp"
+                        android:src="@drawable/icon_camera"
+                        android:visibility="invisible"
+                        app:layout_constraintStart_toStartOf="@+id/Iv_profile"
+                        app:layout_constraintTop_toTopOf="@+id/Iv_profile" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/Tv_nickname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15dp"
+                    android:maxWidth="300dp"
+                    android:textColor="#111111"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/Btn_edit"
+                    android:layout_width="285dp"
+                    android:layout_height="73dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/rounded_button"
+                    android:text="프로필 관리"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/Iv_item1"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginBottom="20dp"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginTop="20dp"
+                            android:src="@drawable/round_home_black_24" />
+
+                        <TextView
+                            android:id="@+id/Tv_item1"
+                            android:layout_width="290dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="10dp"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="10dp"
+                            android:text="체크메이트 소개"
+                            android:textSize="13dp"
+                            android:textColor="#111111"/>
+                    </TableRow>
+
+                    <View
+                        android:id="@+id/V1"
+                        android:layout_width="290dp"
+                        android:layout_height="2dp"
+                        android:layout_marginLeft="70dp"
+                        android:layout_marginRight="5dp"
+                        android:background="#ebebeb" />
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/Iv_item2"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginBottom="20dp"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginTop="20dp"
+                            android:src="@drawable/round_account_circle_black_24" />
+
+                        <TextView
+                            android:id="@+id/Tv_item2"
+                            android:layout_width="290dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="10dp"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="10dp"
+                            android:text="계정관리"
+                            android:textSize="13dp"
+                            android:textColor="#111111"/>
+                    </TableRow>
+
+                    <View
+                        android:id="@+id/V2"
+                        android:layout_width="290dp"
+                        android:layout_height="2dp"
+                        android:layout_marginLeft="70dp"
+                        android:layout_marginRight="5dp"
+                        android:background="#ebebeb" />
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/Iv_item3"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginBottom="20dp"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginTop="20dp"
+                            android:src="@drawable/round_notifications_none_black_24" />
+
+                        <TextView
+                            android:id="@+id/Tv_item3"
+                            android:layout_width="290dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="10dp"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="10dp"
+                            android:text="알림설정"
+                            android:textSize="13dp"
+                            android:textColor="#111111"/>
+                    </TableRow>
+
+                    <View
+                        android:id="@+id/V3"
+                        android:layout_width="290dp"
+                        android:layout_height="2dp"
+                        android:layout_marginLeft="70dp"
+                        android:layout_marginRight="5dp"
+                        android:background="#ebebeb" />
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/Iv_item4"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginBottom="20dp"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginTop="20dp"
+                            android:src="@drawable/round_card_giftcard_black_24" />
+
+                        <TextView
+                            android:id="@+id/Tv_item4"
+                            android:layout_width="290dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="10dp"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="10dp"
+                            android:text="상점"
+                            android:textSize="13dp"
+                            android:textColor="#111111"/>
+                    </TableRow>
+
+                    <View
+                        android:id="@+id/V4"
+                        android:layout_width="290dp"
+                        android:layout_height="2dp"
+                        android:layout_marginLeft="70dp"
+                        android:layout_marginRight="5dp"
+                        android:background="#ebebeb" />
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/Iv_item5"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginBottom="20dp"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginTop="20dp"
+                            android:src="@drawable/round_power_settings_new_black_24" />
+
+                        <TextView
+                            android:id="@+id/Tv_item5"
+                            android:layout_width="290dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="10dp"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="10dp"
+                            android:text="로그아웃"
+                            android:textSize="13dp"
+                            android:textColor="#111111"/>
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_gravity="bottom" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- 네비게이션 바 높이만큼 공백-->
+
+</FrameLayout>

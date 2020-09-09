@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.msg_b.checkmate.ChatActivity">
+
+    <LinearLayout
+        android:id="@+id/Ll_top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/Ll_bottom"
+        android:background="#FFFFFF"
+        android:orientation="vertical">
+        <!---->
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/Rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/Ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal">
+        <!---->
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/browser_actions_bg_grey"
+            android:textStyle="bold"
+            android:text="보내기" />
+    </LinearLayout>
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+
+
+<!--        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/Rv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="6.5"
+            android:background="#c6c6c6"/>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        &lt;!&ndash;<LinearLayout&ndash;&gt;
+            &lt;!&ndash;android:id="@+id/Ll"&ndash;&gt;
+            &lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;
+            &lt;!&ndash;android:layout_height="0dp"&ndash;&gt;
+            &lt;!&ndash;android:minHeight="50dp"&ndash;&gt;
+            &lt;!&ndash;android:layout_weight="1"&ndash;&gt;
+            &lt;!&ndash;android:orientation="horizontal">&ndash;&gt;
+
+            &lt;!&ndash;<EditText&ndash;&gt;
+                &lt;!&ndash;android:id="@+id/editText"&ndash;&gt;
+                &lt;!&ndash;android:layout_width="0dp"&ndash;&gt;
+                &lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;
+                &lt;!&ndash;android:layout_weight="4"&ndash;&gt;
+                &lt;!&ndash;android:ems="10"&ndash;&gt;
+                &lt;!&ndash;android:textSize="15dp"&ndash;&gt;
+                &lt;!&ndash;android:hint="메시지를 입력해주세요."&ndash;&gt;
+                &lt;!&ndash;android:inputType="textPersonName" />&ndash;&gt;
+
+            &lt;!&ndash;<Button&ndash;&gt;
+                &lt;!&ndash;android:id="@+id/button"&ndash;&gt;
+                &lt;!&ndash;android:layout_width="0dp"&ndash;&gt;
+                &lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;
+                &lt;!&ndash;android:layout_weight="1"&ndash;&gt;
+                &lt;!&ndash;android:text="전송" />&ndash;&gt;
+
+        &lt;!&ndash;</LinearLayout>&ndash;&gt;
+
+
+    </LinearLayout>
+
+
+
+
+    &lt;!&ndash;<androidx.recyclerview.widget.RecyclerView&ndash;&gt;
+        &lt;!&ndash;android:id="@+id/Rv"&ndash;&gt;
+        &lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;
+        &lt;!&ndash;android:layout_height="520dp"&ndash;&gt;
+        &lt;!&ndash;android:background="#c6c6c6"&ndash;&gt;
+        &lt;!&ndash;android:layout_alignParentTop="true"/>&ndash;&gt;
+
+
+    &lt;!&ndash;<LinearLayout&ndash;&gt;
+        &lt;!&ndash;android:id="@+id/Ll"&ndash;&gt;
+        &lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;
+        &lt;!&ndash;android:layout_height="50dp"&ndash;&gt;
+        &lt;!&ndash;android:layout_alignParentBottom="true">&ndash;&gt;
+
+        &lt;!&ndash;<EditText&ndash;&gt;
+            &lt;!&ndash;android:id="@+id/editText"&ndash;&gt;
+            &lt;!&ndash;android:layout_width="0dp"&ndash;&gt;
+            &lt;!&ndash;android:layout_weight="5"&ndash;&gt;
+            &lt;!&ndash;android:layout_height="match_parent"&ndash;&gt;
+            &lt;!&ndash;android:ems="10"&ndash;&gt;
+            &lt;!&ndash;android:textSize="15dp"&ndash;&gt;
+            &lt;!&ndash;android:hint="메시지를 입력해주세요."&ndash;&gt;
+            &lt;!&ndash;android:inputType="textPersonName" />&ndash;&gt;
+
+        &lt;!&ndash;<Button&ndash;&gt;
+            &lt;!&ndash;android:id="@+id/button"&ndash;&gt;
+            &lt;!&ndash;android:layout_width="0dp"&ndash;&gt;
+            &lt;!&ndash;android:layout_height="match_parent"&ndash;&gt;
+            &lt;!&ndash;android:layout_weight="1"&ndash;&gt;
+            &lt;!&ndash;android:text="전송" />&ndash;&gt;
+
+    &lt;!&ndash;</LinearLayout>&ndash;&gt;
+
+
+    &lt;!&ndash;<LinearLayout&ndash;&gt;
+        &lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;
+        &lt;!&ndash;android:layout_height="match_parent"&ndash;&gt;
+        &lt;!&ndash;android:orientation="vertical">&ndash;&gt;
+
+        &lt;!&ndash;<androidx.recyclerview.widget.RecyclerView&ndash;&gt;
+            &lt;!&ndash;android:id="@+id/Rv"&ndash;&gt;
+            &lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;
+            &lt;!&ndash;android:layout_height="0dp"&ndash;&gt;
+            &lt;!&ndash;android:layout_weight="11"&ndash;&gt;
+            &lt;!&ndash;android:background="#c6c6c6"/>&ndash;&gt;
+
+        &lt;!&ndash;<LinearLayout&ndash;&gt;
+            &lt;!&ndash;android:id="@+id/Ll"&ndash;&gt;
+            &lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;
+            &lt;!&ndash;android:layout_height="0dp"&ndash;&gt;
+            &lt;!&ndash;android:minHeight="50dp"&ndash;&gt;
+            &lt;!&ndash;android:layout_weight="1"&ndash;&gt;
+            &lt;!&ndash;android:orientation="horizontal">&ndash;&gt;
+
+            &lt;!&ndash;<EditText&ndash;&gt;
+                &lt;!&ndash;android:id="@+id/editText"&ndash;&gt;
+                &lt;!&ndash;android:layout_width="0dp"&ndash;&gt;
+                &lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;
+                &lt;!&ndash;android:layout_weight="4"&ndash;&gt;
+                &lt;!&ndash;android:ems="10"&ndash;&gt;
+                &lt;!&ndash;android:textSize="15dp"&ndash;&gt;
+                &lt;!&ndash;android:hint="메시지를 입력해주세요."&ndash;&gt;
+                &lt;!&ndash;android:inputType="textPersonName" />&ndash;&gt;
+
+            &lt;!&ndash;<Button&ndash;&gt;
+                &lt;!&ndash;android:id="@+id/button"&ndash;&gt;
+                &lt;!&ndash;android:layout_width="0dp"&ndash;&gt;
+                &lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;
+                &lt;!&ndash;android:layout_weight="1"&ndash;&gt;
+                &lt;!&ndash;android:text="전송" />&ndash;&gt;
+
+        &lt;!&ndash;</LinearLayout>&ndash;&gt;
+
+
+    &lt;!&ndash;</LinearLayout>&ndash;&gt;
+
+    <RelativeLayout
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="235dp" />
+
+        <LinearLayout
+            android:id="@+id/Ll"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true">
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:ems="10"
+                android:textSize="15dp"
+                android:hint="메시지를 입력해주세요."
+                android:inputType="textPersonName" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="전송" />
+
+        </LinearLayout>
+
+    </RelativeLayout>-->
+
+
+</RelativeLayout>

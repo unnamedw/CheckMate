@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="floatingActionButtonStyle">@style/Widget.Design.FloatingActionButton</item>
+        <!-- No Title Bar-->
+        <!--<item name="windowActionBar">false</item>-->
+        <!--<item name="windowNoTitle">true</item>-->
+    </style>
+
+
+
+
+    <style name="InactiveItem">
+        <!--<item name="android:listPreferredItemHeightSmall">40dp</item> &lt;!&ndash;item height&ndash;&gt;-->
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <!--item text size-->
+    </style>
+    <style name="ActiveItem">
+        <!--<item name="android:listPreferredItemHeightSmall">40dp</item> &lt;!&ndash;item height&ndash;&gt;-->
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">@color/browser_actions_bg_grey</item>
+        <!--item text size-->
+    </style>
+
+    <style name="MatchText" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="CallActivityTheme" parent="android:Theme.Black">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+
+
+</resources>

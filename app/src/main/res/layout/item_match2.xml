@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parentLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="5dp"
+    android:paddingBottom="10dp"
+    android:paddingLeft="7dp"
+    android:paddingRight="7dp">
+
+
+    <ImageView
+        android:id="@+id/Iv_profile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/Tv_nickname"
+        android:scaleType="centerCrop"
+        android:src="@color/browser_actions_divider_color"
+        android:background="@drawable/iv_border"/>
+
+    <TextView
+        android:id="@+id/Tv_nickname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/Tv_etc"
+        android:gravity="center"
+        android:layout_marginBottom="5dp"
+        android:text="닉네임"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/Tv_etc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"
+        android:text="지역, 직업"
+        android:textStyle="bold"
+        android:textSize="14sp" />
+
+</RelativeLayout>
