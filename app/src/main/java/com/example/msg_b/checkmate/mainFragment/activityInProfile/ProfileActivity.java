@@ -7,7 +7,6 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -21,6 +20,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.bumptech.glide.Glide;
 import com.example.msg_b.checkmate.R;
 import com.example.msg_b.checkmate.util.CurrentUserManager;
@@ -28,13 +29,10 @@ import com.example.msg_b.checkmate.util.User;
 import com.example.msg_b.checkmate.util.Util;
 import com.example.msg_b.checkmate.util.resultGson;
 import com.google.gson.Gson;
-import com.theartofdev.edmodo.cropper.CropImage;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import okhttp3.Call;
 import okhttp3.FormBody;
@@ -182,19 +180,22 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
-            CropImage.ActivityResult result = CropImage.getActivityResult(data);
-            if (resultCode == RESULT_OK) {
-                //찍은 이미지의 경로
-
-                String croppedPath = result.getUri().getPath();
-                Uri croppedUri = result.getUri();
-                new EditImgTask(croppedPath).execute();
-
-            } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
-                Exception error = result.getError();
-            }
-        }
+        /**
+         * Cropper 라이브러리 삭제로 인한 리팩토링 요망
+         * */
+//        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+//            CropImage.ActivityResult result = CropImage.getActivityResult(data);
+//            if (resultCode == RESULT_OK) {
+//                //찍은 이미지의 경로
+//
+//                String croppedPath = result.getUri().getPath();
+//                Uri croppedUri = result.getUri();
+//                new EditImgTask(croppedPath).execute();
+//
+//            } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
+//                Exception error = result.getError();
+//            }
+//        }
     }
 
     @Override
@@ -207,10 +208,15 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
          * 이전 사진이 등록되어 있다면 현재 사진이 있는지 없는지 구분한다.
          * 현재 사진이 있는 경우에는 1)삭제하는 경우와 2)바꾸는 경우로 나눌 수 있다.
          * 현재 사진이 없는 경우에는 바로 프로필 사진을 추가한다. **/
+
+        /**
+         * Cropper 라이브러리 삭제로 인한 리팩토링 요망
+         * */
         switch (v.getId()) {
             case R.id.Iv_profile:
                 num_profile = 1;
-                CropImage.activity().start(ProfileActivity.this);
+
+//                CropImage.activity().start(ProfileActivity.this);
                 break;
 
             case R.id.Iv_profile2:
@@ -218,7 +224,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                 if(imgArray[1] != null){ //현재 사진이 등록되어 있는 경우
                     imgEditDialog();
                 } else {
-                    CropImage.activity().start(ProfileActivity.this);
+//                    CropImage.activity().start(ProfileActivity.this);
                 }
 
                 break;
@@ -229,7 +235,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                     if(imgArray[2] != null){ //현재 사진이 등록되어 있는 경우
                         imgEditDialog();
                     } else { //현재 사진이 없는 경우
-                        CropImage.activity().start(ProfileActivity.this);
+//                        CropImage.activity().start(ProfileActivity.this);
                     }
                 } else { //이전 사진이 등록되지 않은 경우
                     Toast.makeText(ProfileActivity.this, "이전 사진을 먼저 등록해주세요.", Toast.LENGTH_SHORT).show();
@@ -242,7 +248,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                     if(imgArray[3] != null){ //현재 사진이 등록되어 있는 경우
                         imgEditDialog();
                     } else { //현재 사진이 없는 경우
-                        CropImage.activity().start(ProfileActivity.this);
+//                        CropImage.activity().start(ProfileActivity.this);
                     }
                 } else { //이전 사진이 등록되지 않은 경우
                     Toast.makeText(ProfileActivity.this, "이전 사진을 먼저 등록해주세요.", Toast.LENGTH_SHORT).show();
@@ -255,7 +261,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                     if(imgArray[4] != null){ //현재 사진이 등록되어 있는 경우
                         imgEditDialog();
                     } else { //현재 사진이 없는 경우
-                        CropImage.activity().start(ProfileActivity.this);
+//                        CropImage.activity().start(ProfileActivity.this);
                     }
                 } else { //이전 사진이 등록되지 않은 경우
                     Toast.makeText(ProfileActivity.this, "이전 사진을 먼저 등록해주세요.", Toast.LENGTH_SHORT).show();
@@ -268,7 +274,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                     if(imgArray[5] != null){ //현재 사진이 등록되어 있는 경우
                         imgEditDialog();
                     } else { //현재 사진이 없는 경우
-                        CropImage.activity().start(ProfileActivity.this);
+//                        CropImage.activity().start(ProfileActivity.this);
                     }
                 } else { //이전 사진이 등록되지 않은 경우
                     Toast.makeText(ProfileActivity.this, "이전 사진을 먼저 등록해주세요.", Toast.LENGTH_SHORT).show();
@@ -355,7 +361,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
                 switch (i) {
                     case 0:
-                        CropImage.activity().start(ProfileActivity.this);
+//                        CropImage.activity().start(ProfileActivity.this);
                         break;
                     case 1:
                         String delImg = imgArray[num_profile-1];

@@ -1,4 +1,4 @@
-package com.example.msg_b.checkmate;
+package com.example.msg_b.checkmate.deprecation;
 
 //import android.support.v7.app.AppCompatActivity;
 import android.annotation.TargetApi;
@@ -24,6 +24,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+
+import com.example.msg_b.checkmate.R;
 
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.CameraBridgeViewBase;
@@ -122,7 +124,7 @@ public class OpencvActivity extends AppCompatActivity implements CameraBridgeVie
 
         Log.d(TAG, "read_cascade_file:");
 
-        cascadeClassifier_face = loadCascade( "haarcascade_frontalface_alt.xml");
+        cascadeClassifier_face = loadCascade("haarcascade_frontalface_alt.xml");
         Log.d(TAG, "read_cascade_file:");
 
         cascadeClassifier_eye = loadCascade("haarcascade_eye_tree_eyeglasses.xml");

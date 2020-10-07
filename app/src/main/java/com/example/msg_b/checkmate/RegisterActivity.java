@@ -21,12 +21,12 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.msg_b.checkmate.util.CurrentUserManager;
 import com.example.msg_b.checkmate.util.User;
 import com.example.msg_b.checkmate.util.Util;
-import com.example.msg_b.checkmate.R;
 import com.google.gson.Gson;
-import com.theartofdev.edmodo.cropper.CropImage;
 
 import java.io.File;
 import java.io.IOException;
@@ -34,7 +34,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-import androidx.appcompat.app.AppCompatActivity;
 import okhttp3.Call;
 import okhttp3.FormBody;
 import okhttp3.MediaType;
@@ -135,7 +134,10 @@ public class RegisterActivity extends AppCompatActivity {
         iv_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CropImage.activity().start(RegisterActivity.this);
+                /**
+                 * Cropper 라이브러리 삭제로 인한 리팩토링 요망
+                 * */
+//                CropImage.activity().start(RegisterActivity.this);
             }
         });
 
@@ -311,21 +313,25 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
-            CropImage.ActivityResult result = CropImage.getActivityResult(data);
-            if (resultCode == RESULT_OK) {
-                //찍은 이미지의 경로
-                userProfile = result.getUri().getPath();
-                profileCheck = true;
+        /**
+         * Cropper 라이브러리 삭제로 인한 리팩토링 요망
+         * */
 
-                //이미지뷰에 띄워줌
-                iv_profile.setImageURI(result.getUri());
-                tv_profile.setVisibility(View.INVISIBLE);
-
-            } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
-                Exception error = result.getError();
-            }
-        }
+//        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+//            CropImage.ActivityResult result = CropImage.getActivityResult(data);
+//            if (resultCode == RESULT_OK) {
+//                //찍은 이미지의 경로
+//                userProfile = result.getUri().getPath();
+//                profileCheck = true;
+//
+//                //이미지뷰에 띄워줌
+//                iv_profile.setImageURI(result.getUri());
+//                tv_profile.setVisibility(View.INVISIBLE);
+//
+//            } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
+//                Exception error = result.getError();
+//            }
+//        }
     }
 
 

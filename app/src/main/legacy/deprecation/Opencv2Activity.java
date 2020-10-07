@@ -1,4 +1,4 @@
-package com.example.msg_b.checkmate;
+package com.example.msg_b.checkmate.deprecation;
 
 //import android.support.v7.app.AppCompatActivity;
 import android.app.AlertDialog;

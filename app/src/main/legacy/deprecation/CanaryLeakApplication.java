@@ -1,8 +1,7 @@
-package com.example.msg_b.checkmate;
+package com.example.msg_b.checkmate.deprecation;
 
 import android.app.Application;
 
-import com.squareup.leakcanary.LeakCanary;
 
 public class CanaryLeakApplication extends Application {
 

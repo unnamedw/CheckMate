@@ -8,7 +8,7 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-package com.example.msg_b.checkmate.videocall;
+package com.example.msg_b.checkmate.deprecation.videocall;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -220,7 +220,7 @@ public class CallActivity extends Activity implements AppRTCClient.SignalingEven
 
     Log.d(TAG, "read_cascade_file:");
 
-    cascadeClassifier_face = loadCascade( "haarcascade_frontalface_alt.xml");
+    cascadeClassifier_face = loadCascade("haarcascade_frontalface_alt.xml");
     Log.d(TAG, "read_cascade_file:");
 
     cascadeClassifier_eye = loadCascade("haarcascade_eye_tree_eyeglasses.xml");

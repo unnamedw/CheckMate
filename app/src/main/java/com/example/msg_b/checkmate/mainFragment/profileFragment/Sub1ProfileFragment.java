@@ -5,7 +5,6 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -26,7 +25,6 @@ import com.example.msg_b.checkmate.util.User;
 import com.example.msg_b.checkmate.util.Util;
 import com.example.msg_b.checkmate.util.resultGson;
 import com.google.gson.Gson;
-import com.theartofdev.edmodo.cropper.CropImage;
 
 import java.io.File;
 import java.io.IOException;
@@ -180,21 +178,24 @@ public class Sub1ProfileFragment extends androidx.fragment.app.Fragment implemen
         super.onActivityResult(requestCode, resultCode, data);
         Log.d("testing", "onActivityResult");
 
-        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
-            CropImage.ActivityResult result = CropImage.getActivityResult(data);
-            if (resultCode == getActivity().RESULT_OK) {
-                //찍은 이미지의 경로
-
-                String croppedPath = result.getUri().getPath();
-                Uri croppedUri = result.getUri();
-
-                Log.d("testing", "Result Success");
-                new EditImgTask(croppedPath).execute();
-
-            } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
-                Exception error = result.getError();
-            }
-        }
+        /**
+         * Cropper 라이브러리 삭제로 인한 리팩토링 요망
+         * */
+//        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+//            CropImage.ActivityResult result = CropImage.getActivityResult(data);
+//            if (resultCode == getActivity().RESULT_OK) {
+//                //찍은 이미지의 경로
+//
+//                String croppedPath = result.getUri().getPath();
+//                Uri croppedUri = result.getUri();
+//
+//                Log.d("testing", "Result Success");
+//                new EditImgTask(croppedPath).execute();
+//
+//            } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
+//                Exception error = result.getError();
+//            }
+//        }
     }
 
     @Override
@@ -273,10 +274,13 @@ public class Sub1ProfileFragment extends androidx.fragment.app.Fragment implemen
          * 이전 사진이 등록되어 있다면 현재 사진이 있는지 없는지 구분한다.
          * 현재 사진이 있는 경우에는 1)삭제하는 경우와 2)바꾸는 경우로 나눌 수 있다.
          * 현재 사진이 없는 경우에는 바로 프로필 사진을 추가한다. **/
+        /**
+         * Cropper 라이브러리 삭제로 인한 리팩토링 요망
+         * */
         switch (v.getId()) {
             case R.id.Iv_profile:
                 num_profile = 1;
-                CropImage.activity().start(getContext(), Sub1ProfileFragment.this);
+//                CropImage.activity().start(getContext(), Sub1ProfileFragment.this);
                 break;
 
             case R.id.Iv_profile2:
@@ -284,7 +288,7 @@ public class Sub1ProfileFragment extends androidx.fragment.app.Fragment implemen
                 if(imgArray[1] != null){ //현재 사진이 등록되어 있는 경우
                     imgEditDialog();
                 } else {
-                    CropImage.activity().start(getContext(), Sub1ProfileFragment.this);
+//                    CropImage.activity().start(getContext(), Sub1ProfileFragment.this);
                 }
 
                 break;
@@ -295,7 +299,7 @@ public class Sub1ProfileFragment extends androidx.fragment.app.Fragment implemen
                     if(imgArray[2] != null){ //현재 사진이 등록되어 있는 경우
                         imgEditDialog();
                     } else { //현재 사진이 없는 경우
-                        CropImage.activity().start(getContext(), Sub1ProfileFragment.this);
+//                        CropImage.activity().start(getContext(), Sub1ProfileFragment.this);
                     }
                 } else { //이전 사진이 등록되지 않은 경우
                     Toast.makeText(getActivity(), "이전 사진을 먼저 등록해주세요.", Toast.LENGTH_SHORT).show();
@@ -308,7 +312,7 @@ public class Sub1ProfileFragment extends androidx.fragment.app.Fragment implemen
                     if(imgArray[3] != null){ //현재 사진이 등록되어 있는 경우
                         imgEditDialog();
                     } else { //현재 사진이 없는 경우
-                        CropImage.activity().start(getContext(), Sub1ProfileFragment.this);
+//                        CropImage.activity().start(getContext(), Sub1ProfileFragment.this);
                     }
                 } else { //이전 사진이 등록되지 않은 경우
                     Toast.makeText(getActivity(), "이전 사진을 먼저 등록해주세요.", Toast.LENGTH_SHORT).show();
@@ -321,7 +325,7 @@ public class Sub1ProfileFragment extends androidx.fragment.app.Fragment implemen
                     if(imgArray[4] != null){ //현재 사진이 등록되어 있는 경우
                         imgEditDialog();
                     } else { //현재 사진이 없는 경우
-                        CropImage.activity().start(getContext(), Sub1ProfileFragment.this);
+//                        CropImage.activity().start(getContext(), Sub1ProfileFragment.this);
                     }
                 } else { //이전 사진이 등록되지 않은 경우
                     Toast.makeText(getContext(), "이전 사진을 먼저 등록해주세요.", Toast.LENGTH_SHORT).show();
@@ -334,7 +338,7 @@ public class Sub1ProfileFragment extends androidx.fragment.app.Fragment implemen
                     if(imgArray[5] != null){ //현재 사진이 등록되어 있는 경우
                         imgEditDialog();
                     } else { //현재 사진이 없는 경우
-                        CropImage.activity().start(getContext(), Sub1ProfileFragment.this);
+//                        CropImage.activity().start(getContext(), Sub1ProfileFragment.this);
                     }
                 } else { //이전 사진이 등록되지 않은 경우
                     Toast.makeText(getActivity(), "이전 사진을 먼저 등록해주세요.", Toast.LENGTH_SHORT).show();
@@ -389,7 +393,7 @@ public class Sub1ProfileFragment extends androidx.fragment.app.Fragment implemen
 
                 switch (i) {
                     case 0:
-                        CropImage.activity().start(getActivity());
+//                        CropImage.activity().start(getActivity());
                         break;
                     case 1:
                         String delImg = imgArray[num_profile-1];

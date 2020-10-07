@@ -22,6 +22,9 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
 import com.example.msg_b.checkmate.mainFragment.ChatFragment;
 import com.example.msg_b.checkmate.mainFragment.EtcFragment;
 import com.example.msg_b.checkmate.mainFragment.FindFragment;
@@ -31,7 +34,6 @@ import com.example.msg_b.checkmate.server.SetStatusTask;
 import com.example.msg_b.checkmate.service.MyService;
 import com.example.msg_b.checkmate.util.CurrentUserManager;
 import com.example.msg_b.checkmate.util.User;
-import com.example.msg_b.checkmate.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomnavigation.LabelVisibilityMode;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -49,9 +51,6 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
 public class HomeActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
@@ -166,13 +165,8 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         profileFragment = new ProfileFragment();
 
         floatingActionButton = findViewById(R.id.floatingActionButton);
-        floatingActionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, TestActivity.class);
-                startActivity(intent);
-            }
-        });
+        floatingActionButton.setOnClickListener(v ->
+                Toast.makeText(this, "Deprecated Test Activity", Toast.LENGTH_LONG).show());
 
         tv_checkmate = findViewById(R.id.Tv_checkmate);
         tv_checkmate.setOnClickListener(new View.OnClickListener() {

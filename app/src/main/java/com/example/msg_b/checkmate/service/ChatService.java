@@ -17,13 +17,18 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 
+/**
+ * 백그라운드에서 소켓을 연결하는 서비스.
+ * 채팅방에 입장하면 서비스를 통해 채팅 서버와 소켓을 연결하고 메시지를 주고받는 로직.
+ *
+ * */
 public class ChatService extends Service {
 
 
     private static String ip3 = "58.122.116.192:5050"; //집 공인아이피
     private static String ip = "192.168.0.169"; // 집
-    private static String ip2 = "192.168.56.1"; // 6사
-    private static String ip4 = "192.168.0.116"; // 3사
+    private static String ip2 = "192.168.56.1"; // 테스트
+    private static String ip4 = "192.168.0.116"; // 테스트2
     private static String ip5 = "115.71.238.160"; // 호스팅서버
     private static int port = 5000;
     public Socket socket;

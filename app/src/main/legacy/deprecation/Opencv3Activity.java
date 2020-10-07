@@ -1,4 +1,4 @@
-package com.example.msg_b.checkmate;
+package com.example.msg_b.checkmate.deprecation;
 
 //import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.util.Log;
 import android.view.SurfaceView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.msg_b.checkmate.R;
 
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.CameraBridgeViewBase;

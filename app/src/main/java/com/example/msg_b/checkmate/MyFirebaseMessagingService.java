@@ -13,11 +13,12 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.util.Log;
 
-import com.example.msg_b.checkmate.R;
+import androidx.core.app.NotificationCompat;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+
 import com.example.msg_b.checkmate.util.SQLiteHelper2;
 import com.example.msg_b.checkmate.util.User;
 import com.example.msg_b.checkmate.util.Util;
-import com.example.msg_b.checkmate.videocall.ConnectActivity;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
@@ -27,8 +28,6 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.Random;
 
-import androidx.core.app.NotificationCompat;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import okhttp3.Call;
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
@@ -136,24 +135,28 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
 
         }
-        //영통 발신자인 경우
-        else if(remoteMessage.getData().get("type").equals("respond")) {
 
-        }
-        //영통 수신자인 경우
-        else if(remoteMessage.getData().get("type").equals("received")) {
-
-            Intent intent = new Intent(this, ConnectActivity.class);
-            intent.putExtra("opentype", "receiver");
-            intent.putExtra("nickname_caller", remoteMessage.getData().get("nickname"));
-            intent.putExtra("profile_caller", remoteMessage.getData().get("profile"));
-            intent.putExtra("roomid", remoteMessage.getData().get("roomid"));
-            startActivity(intent);
-
-            Log.d("videoT", remoteMessage.getData().get("nickname"));
-            Log.d("videoT", remoteMessage.getData().get("profile"));
-            Log.d("videoT", remoteMessage.getData().get("roomid"));
-        }
+        /**
+         * Video call 기능 삭제
+         * */
+//        //영통 발신자인 경우
+//        else if(remoteMessage.getData().get("type").equals("respond")) {
+//
+//        }
+//        //영통 수신자인 경우
+//        else if(remoteMessage.getData().get("type").equals("received")) {
+//
+//            Intent intent = new Intent(this, ConnectActivity.class);
+//            intent.putExtra("opentype", "receiver");
+//            intent.putExtra("nickname_caller", remoteMessage.getData().get("nickname"));
+//            intent.putExtra("profile_caller", remoteMessage.getData().get("profile"));
+//            intent.putExtra("roomid", remoteMessage.getData().get("roomid"));
+//            startActivity(intent);
+//
+//            Log.d("videoT", remoteMessage.getData().get("nickname"));
+//            Log.d("videoT", remoteMessage.getData().get("profile"));
+//            Log.d("videoT", remoteMessage.getData().get("roomid"));
+//        }
 
 
 //        // Check if message contains a data payload.

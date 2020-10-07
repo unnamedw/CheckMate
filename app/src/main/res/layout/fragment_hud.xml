@@ -8,7 +8,7 @@
     <ImageButton
         android:id="@+id/button_toggle_debug"
         android:background="@android:drawable/ic_menu_info_details"
-        android:contentDescription="@string/toggle_debug"
+        android:contentDescription="StringToggleDebug"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_width="48dp"

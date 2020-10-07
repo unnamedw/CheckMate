@@ -2,13 +2,13 @@ package com.example.msg_b.checkmate.mainFragment;
 
 
 import android.app.AlertDialog;
+import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,17 +18,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.example.msg_b.checkmate.mainFragment.activityInProfile.AccountActivity;
+import com.example.msg_b.checkmate.ExActivity;
 import com.example.msg_b.checkmate.LoginActivity;
 import com.example.msg_b.checkmate.R;
-import com.example.msg_b.checkmate.ExActivity;
+import com.example.msg_b.checkmate.mainFragment.activityInProfile.AccountActivity;
 import com.example.msg_b.checkmate.mainFragment.activityInProfile.ProfileActivity;
 import com.example.msg_b.checkmate.util.CurrentUserManager;
 import com.example.msg_b.checkmate.util.User;
 import com.example.msg_b.checkmate.util.Util;
 import com.example.msg_b.checkmate.util.resultGson;
 import com.google.gson.Gson;
-import com.theartofdev.edmodo.cropper.CropImage;
 
 import java.io.File;
 import java.io.IOException;
@@ -42,8 +41,6 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
-
-import static android.app.Activity.RESULT_OK;
 
 
 /**
@@ -96,7 +93,10 @@ public class ProfileLegacyFragment extends androidx.fragment.app.Fragment {
             @Override
             public void onClick(View view) {
 
-                CropImage.activity().start(getContext(), ProfileLegacyFragment.this);
+                /**
+                 * Cropper 라이브러리 삭제로 인한 리팩토링 요망
+                 * */
+//                CropImage.activity().start(getContext(), ProfileLegacyFragment.this);
 
 
 
@@ -237,19 +237,22 @@ public class ProfileLegacyFragment extends androidx.fragment.app.Fragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
-            CropImage.ActivityResult result = CropImage.getActivityResult(data);
-            if (resultCode == RESULT_OK) {
-                //찍은 이미지의 경로
-                String croppedPath = result.getUri().getPath();
-
-                //해당 uri 를 파라미터로 하여 서버에 업로드
-                new MyImgTask(croppedPath).execute();
-
-            } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
-                Exception error = result.getError();
-            }
-        }
+        /**
+         * Cropper 라이브러리 삭제로 인한 리팩토링 요망
+         * */
+//        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+//            CropImage.ActivityResult result = CropImage.getActivityResult(data);
+//            if (resultCode == RESULT_OK) {
+//                //찍은 이미지의 경로
+//                String croppedPath = result.getUri().getPath();
+//
+//                //해당 uri 를 파라미터로 하여 서버에 업로드
+//                new MyImgTask(croppedPath).execute();
+//
+//            } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
+//                Exception error = result.getError();
+//            }
+//        }
 
     }
 

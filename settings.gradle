@@ -1,7 +1,13 @@
-include ':app', ':webrtc', ':opencv'
+include ':app'
 
 /**
  * 2019년 3월 2일 오전 6시 전 경에 변경
- * 변경 전 - [include ':app']
- * 변경 후 - [include ':app', ':webrtc']
+ * 변경 전- include ':app'
+ * 변경 후- include ':app', ':webrtc'
+ *
+ * 2020년 10월 7일 오후 12시 54분 경 변경
+ * 변경 전- include ':app', ':webrtc'
+ * 변경 후- include ':app'
  * **/
+
+

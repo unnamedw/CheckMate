@@ -5,6 +5,9 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.util.Log;
 
+/**
+ * 테스트를 위한 서비스 (용도x)
+ * */
 public class MyService extends Service {
     public MyService() {
     }

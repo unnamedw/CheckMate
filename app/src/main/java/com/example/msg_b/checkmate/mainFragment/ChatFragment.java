@@ -4,6 +4,7 @@ package com.example.msg_b.checkmate.mainFragment;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.AlertDialog;
+import android.app.Fragment;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -14,7 +15,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,17 +23,20 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.bumptech.glide.Glide;
 import com.example.msg_b.checkmate.ChatActivity;
 import com.example.msg_b.checkmate.HomeActivity;
 import com.example.msg_b.checkmate.R;
-import com.example.msg_b.checkmate.server.CallerToReceiverTask;
 import com.example.msg_b.checkmate.util.CurrentUserManager;
 import com.example.msg_b.checkmate.util.Room;
 import com.example.msg_b.checkmate.util.SQLiteHelper2;
 import com.example.msg_b.checkmate.util.User;
 import com.example.msg_b.checkmate.util.Util;
-import com.example.msg_b.checkmate.videocall.ConnectActivity;
 import com.google.gson.Gson;
 
 import org.json.JSONArray;
@@ -41,10 +44,6 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import de.hdodenhof.circleimageview.CircleImageView;
 import okhttp3.Call;
 import okhttp3.FormBody;
@@ -52,6 +51,8 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
+
+//import com.example.msg_b.checkmate.deprecation.videocall.ConnectActivity;
 
 
 /**
@@ -330,21 +331,24 @@ public class ChatFragment extends androidx.fragment.app.Fragment{
             holder.tv_nickname.setText(tmpUser.getNickname());
 
             //테스트 유저
+            /**
+             * VideoCall 기능 삭제
+             * */
             if(position == 0) {
-                holder.civ_profile.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        String tmpRoomId = String.valueOf(Util.getRandomNum(100000, 999999));
-                        Intent intent = new Intent(getActivity(), ConnectActivity.class);
-                        intent.putExtra("userdata", tmpUser);
-                        intent.putExtra("opentype", "caller");
-                        intent.putExtra("roomid", tmpRoomId);
-                        startActivity(intent);
-                        Log.d("VideoCallRoom", tmpRoomId);
-                        Toast.makeText(mContext, "방 번호 : " + tmpRoomId, Toast.LENGTH_LONG).show();
-                    }
-                });
-
+//                holder.civ_profile.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        String tmpRoomId = String.valueOf(Util.getRandomNum(100000, 999999));
+//                        Intent intent = new Intent(getActivity(), ConnectActivity.class);
+//                        intent.putExtra("userdata", tmpUser);
+//                        intent.putExtra("opentype", "caller");
+//                        intent.putExtra("roomid", tmpRoomId);
+//                        startActivity(intent);
+//                        Log.d("VideoCallRoom", tmpRoomId);
+//                        Toast.makeText(mContext, "방 번호 : " + tmpRoomId, Toast.LENGTH_LONG).show();
+//                    }
+//                });
+//
             }
             //일반 유저
             else {
@@ -389,21 +393,24 @@ public class ChatFragment extends androidx.fragment.app.Fragment{
                             }
                         });
 
+                        /**
+                         * VideoCall 기능 삭제로 인한 리팩토링 요망
+                         * */
                         //Negative[왼쪽]
                         adb.setNegativeButton("영상통화", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                //Do something when user press no button from alert dialog
-                                String tmpRoomId = String.valueOf(Util.getRandomNum(100000, 999999));
-                                Intent intent = new Intent(getActivity(), ConnectActivity.class);
-                                intent.putExtra("userdata", tmpUser);
-                                intent.putExtra("opentype", "caller");
-                                intent.putExtra("roomid", tmpRoomId);
-                                startActivity(intent);
-                                Log.d("VideoCallRoom", tmpRoomId);
-                                Toast.makeText(mContext, "방 번호 : " + tmpRoomId, Toast.LENGTH_LONG).show();
-
-                                new CallerToReceiverTask(tmpRoomId, CurrentId, tmpUser.getId(), CurrentUser.getNickname(), CurrentUser.getImg_profile()).execute();
+//                                //Do something when user press no button from alert dialog
+//                                String tmpRoomId = String.valueOf(Util.getRandomNum(100000, 999999));
+//                                Intent intent = new Intent(getActivity(), ConnectActivity.class);
+//                                intent.putExtra("userdata", tmpUser);
+//                                intent.putExtra("opentype", "caller");
+//                                intent.putExtra("roomid", tmpRoomId);
+//                                startActivity(intent);
+//                                Log.d("VideoCallRoom", tmpRoomId);
+//                                Toast.makeText(mContext, "방 번호 : " + tmpRoomId, Toast.LENGTH_LONG).show();
+//
+//                                new CallerToReceiverTask(tmpRoomId, CurrentId, tmpUser.getId(), CurrentUser.getNickname(), CurrentUser.getImg_profile()).execute();
                             }
                         });
                         adb.setNeutralButton("취소", new DialogInterface.OnClickListener() {

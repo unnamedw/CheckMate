@@ -31,6 +31,10 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.bumptech.glide.Glide;
 import com.example.msg_b.checkmate.service.ChatService;
 import com.example.msg_b.checkmate.util.ChatMessage;
@@ -39,7 +43,6 @@ import com.example.msg_b.checkmate.util.SQLiteHelper;
 import com.example.msg_b.checkmate.util.SQLiteHelper2;
 import com.example.msg_b.checkmate.util.User;
 import com.example.msg_b.checkmate.util.Util;
-import com.example.msg_b.checkmate.R;
 import com.google.gson.Gson;
 
 import org.json.JSONArray;
@@ -49,9 +52,6 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import de.hdodenhof.circleimageview.CircleImageView;
 import okhttp3.Call;
 import okhttp3.FormBody;
@@ -60,22 +60,19 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
+/** ChatActivity Flow
+ *
+ * BindService[액티비티] -> onBind[서비스] -> onServiceConnected[액티비티]
+ *
+ * 1. 기기에 저장된 모든 채팅 내역을 불러온다. -> setChatList()
+ * 2. 누락된 메시지를 서버로부터 받아온다. -> getChatDataTask()
+ * 3. 채팅 목록을 띄운다. initRecyclerView()
+ *
+ * onStart 에서 서비스 연결
+ * onStop 에서 연결 해제
+ * **/
+
 public class ChatActivity extends AppCompatActivity implements View.OnClickListener {
-
-
-    /** ChatActivity Flow
-     *
-     * BindService[액티비티] -> onBind[서비스] -> onServiceConnected[액티비티]
-     *
-     * 1. 기기에 저장된 모든 채팅 내역을 불러온다. -> setChatList()
-     * 2. 누락된 메시지를 서버로부터 받아온다. -> getChatDataTask()
-     * 3. 채팅 목록을 띄운다. initRecyclerView()
-     *
-     * onStart 에서 서비스 연결
-     * onStop 에서 연결 해제
-     * **/
-
-
     private final String TYPE_TEXT = "TEXT";
     private final String TYPE_IMG = "IMG";
     private String CURRENT_ROOM_ID = null;
