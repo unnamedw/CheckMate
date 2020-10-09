@@ -16,12 +16,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import org.opencv.android.Utils;
-import org.opencv.core.Mat;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.msg_b.checkmate.R;
+
+import org.opencv.android.Utils;
+import org.opencv.core.Mat;
 
 public class Opencv2Activity extends AppCompatActivity {
 

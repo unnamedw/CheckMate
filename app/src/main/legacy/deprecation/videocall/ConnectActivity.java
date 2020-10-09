@@ -21,8 +21,6 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-//import android.support.v4.app.ActivityCompat;
-//import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.KeyEvent;
@@ -41,6 +39,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.core.app.ActivityCompat;
+
 import com.bumptech.glide.Glide;
 import com.example.msg_b.checkmate.R;
 import com.example.msg_b.checkmate.util.User;
@@ -52,8 +52,10 @@ import org.json.JSONException;
 import java.util.ArrayList;
 import java.util.Random;
 
-import androidx.core.app.ActivityCompat;
 import de.hdodenhof.circleimageview.CircleImageView;
+
+//import android.support.v4.app.ActivityCompat;
+//import android.support.v7.app.AppCompatActivity;
 
 
 /**
