@@ -4,5 +4,5 @@
 
 각종 모듈은 제외.
 
-Kotlin 및 Jetpack 적용하여 리팩토링 중
+Kotlin 및 Jetpack 적용하여 리팩토링 중 [현재 미진행]
 
