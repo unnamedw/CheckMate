@@ -49,16 +49,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".TestDestinationActivity"></activity>
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <!-- 2020년 8월 10일 작성 -->
-                <!-- 테스트를 위해 임시로 TestActivity 를 Main 으로 변경 -->
-                <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            </intent-filter>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".LoginActivity">
         </activity>
-        <activity android:name=".LoginActivity" />
         <activity
             android:name=".RegisterActivity"
             android:windowSoftInputMode="adjustPan" />
@@ -89,7 +82,15 @@
         <activity android:name=".KakaoTestActivity" />
         <activity
             android:name=".HomeActivity"
-            android:windowSoftInputMode="adjustPan" />
+            android:windowSoftInputMode="adjustPan" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <!-- 2020년 8월 10일 작성 -->
+                <!-- 테스트를 위해 임시로 TestActivity 를 Main 으로 변경 -->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <meta-data
             android:name="com.facebook.accountkit.ApplicationName"
@@ -146,45 +147,45 @@
             android:exported="true" />
 
         <activity android:name=".BillingActivity" />
-        <activity android:name=".mainFragment.profileFragment.MapsActivity" /> <!-- 영상통화 부분 -->
-        <activity
-            android:name=".deprecation.videocall.ConnectActivity"
-            android:label="@string/app_name"
-            android:windowSoftInputMode="adjustPan">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
+<!--        <activity android:name=".mainFragment.profileFragment.MapsActivity" /> &lt;!&ndash; 영상통화 부분 &ndash;&gt;-->
+<!--        <activity-->
+<!--            android:name=".deprecation.videocall.ConnectActivity"-->
+<!--            android:label="@string/app_name"-->
+<!--            android:windowSoftInputMode="adjustPan">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.VIEW" />-->
 
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
+<!--                <category android:name="android.intent.category.DEFAULT" />-->
+<!--                <category android:name="android.intent.category.BROWSABLE" />-->
 
-                <data
-                    android:host="appr.tc"
-                    android:scheme="https" />
-                <data
-                    android:host="appr.tc"
-                    android:scheme="http" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".deprecation.videocall.CallActivity"
-            android:configChanges="orientation|smallestScreenSize|screenSize|screenLayout"
-            android:label="@string/app_name"
-            android:screenOrientation="fullUser"
-            android:theme="@style/CallActivityTheme" /> <!-- 영상통화 부분 -->
-        <activity
-            android:name=".deprecation.OpencvActivity"
-            android:configChanges="keyboardHidden|orientation"
-            android:screenOrientation="landscape" />
-        <activity android:name=".deprecation.TestActivity">
-            <intent-filter>
+<!--                <data-->
+<!--                    android:host="appr.tc"-->
+<!--                    android:scheme="https" />-->
+<!--                <data-->
+<!--                    android:host="appr.tc"-->
+<!--                    android:scheme="http" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+<!--        <activity-->
+<!--            android:name=".deprecation.videocall.CallActivity"-->
+<!--            android:configChanges="orientation|smallestScreenSize|screenSize|screenLayout"-->
+<!--            android:label="@string/app_name"-->
+<!--            android:screenOrientation="fullUser"-->
+<!--            android:theme="@style/CallActivityTheme" /> &lt;!&ndash; 영상통화 부분 &ndash;&gt;-->
+<!--        <activity-->
+<!--            android:name=".deprecation.OpencvActivity"-->
+<!--            android:configChanges="keyboardHidden|orientation"-->
+<!--            android:screenOrientation="landscape" />-->
+<!--        <activity android:name=".deprecation.TestActivity">-->
+<!--            <intent-filter>-->
 
-                <!-- 2020년 8월 10일 작성 -->
-                <!-- 테스트를 위해 임시로 TestActivity 를 Main 으로 변경 -->
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".deprecation.Opencv2Activity" />
-        <activity android:name=".deprecation.Opencv3Activity" />
+<!--                &lt;!&ndash; 2020년 8월 10일 작성 &ndash;&gt;-->
+<!--                &lt;!&ndash; 테스트를 위해 임시로 TestActivity 를 Main 으로 변경 &ndash;&gt;-->
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+<!--        <activity android:name=".deprecation.Opencv2Activity" />-->
+<!--        <activity android:name=".deprecation.Opencv3Activity" />-->
     </application>
 
 </manifest>

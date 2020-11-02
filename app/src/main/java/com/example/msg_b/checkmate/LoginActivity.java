@@ -12,9 +12,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.msg_b.checkmate.util.CurrentUserManager;
 import com.example.msg_b.checkmate.util.User;
-import com.example.msg_b.checkmate.R;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
@@ -42,8 +44,6 @@ import com.kakao.util.helper.log.Logger;
 
 import java.io.IOException;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import okhttp3.Call;
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
@@ -92,19 +92,19 @@ public class LoginActivity extends AppCompatActivity {
         btn_kakao_real = (com.kakao.usermgmt.LoginButton) findViewById(R.id.Btn_kakao_real);
         btn_fb = (Button) findViewById(R.id.Btn_fb);
         btn_fb_real = (LoginButton) findViewById(R.id.Btn_fb_real);
-        btn_test = findViewById(R.id.Btn_test);
-        et_test = findViewById(R.id.Et_test);
+//        btn_test = findViewById(R.id.Btn_test);
+//        et_test = findViewById(R.id.Et_test);
         iv = (ImageView) findViewById(R.id.imageView);
 
-        btn_test.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String text = et_test.getText().toString();
-                if(!text.isEmpty()) {
-                    new UpdateCurrentUserTask(text).execute();
-                }
-            }
-        });
+//        btn_test.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                String text = et_test.getText().toString();
+//                if(!text.isEmpty()) {
+//                    new UpdateCurrentUserTask(text).execute();
+//                }
+//            }
+//        });
 
 
 

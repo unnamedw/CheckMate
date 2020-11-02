@@ -54,8 +54,6 @@ import java.util.ArrayList;
 
 public class HomeActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
-
-
     /** 파싱테스트 **/
     private final String TAG_JSON="users";
     private final String TAG_ID = "id";
@@ -257,10 +255,6 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         super.onDestroy();
         Log.d("text5", "HomeDestroy");
     }
-
-
-
-
 
 
     @Override

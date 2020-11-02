@@ -259,6 +259,7 @@ class MainActivity : BaseActivity() {
         startActivity(intent)
         finish()
     }
+
     //가입절차 화면으로 이동
     /** 회원정보 확인을 위한 Task  */
     inner class LoginTask : AsyncTask<String?, Void?, String?>() {

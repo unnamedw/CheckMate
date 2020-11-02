@@ -5,7 +5,6 @@ import android.annotation.TargetApi;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -19,18 +18,17 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-import com.example.msg_b.checkmate.server.SelectUserThread;
-import com.example.msg_b.checkmate.util.CurrentUserManager;
-import com.example.msg_b.checkmate.util.User;
-import com.example.msg_b.checkmate.R;
-import com.google.gson.Gson;
-import com.readystatesoftware.systembartint.SystemBarTintManager;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
+
+import com.bumptech.glide.Glide;
+import com.example.msg_b.checkmate.server.SelectUserThread;
+import com.example.msg_b.checkmate.util.CurrentUserManager;
+import com.example.msg_b.checkmate.util.User;
+import com.google.gson.Gson;
+
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -58,12 +56,6 @@ public class ExActivity extends AppCompatActivity {
         // 타이틀 바를 숨김
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ex);
-
-        // create our manager instance after the content view is set
-        SystemBarTintManager tintManager = new SystemBarTintManager(this);
-        // enable status bar tint
-        tintManager.setStatusBarTintEnabled(true);
-        tintManager.setTintColor(Color.parseColor("#501C1C1C"));
 
         iv_profile = findViewById(R.id.Iv_profile);
         tv_nickname = findViewById(R.id.Tv_nickname);

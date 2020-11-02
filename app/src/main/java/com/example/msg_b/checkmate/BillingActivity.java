@@ -10,13 +10,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.anjlab.android.iab.v3.BillingProcessor;
 import com.anjlab.android.iab.v3.SkuDetails;
 import com.anjlab.android.iab.v3.TransactionDetails;
-import com.example.msg_b.checkmate.R;
-
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
 
 public class BillingActivity extends AppCompatActivity implements BillingProcessor.IBillingHandler {
 
@@ -66,6 +65,7 @@ public class BillingActivity extends AppCompatActivity implements BillingProcess
         btn_heart20.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "20클릭", Toast.LENGTH_LONG).show();
                 purchaseUnit = 20; // 임시코드
                 purchaseProduct(id_heart20);
             }

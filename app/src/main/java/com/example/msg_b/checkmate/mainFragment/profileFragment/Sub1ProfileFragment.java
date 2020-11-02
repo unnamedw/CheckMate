@@ -44,9 +44,6 @@ public class Sub1ProfileFragment extends androidx.fragment.app.Fragment implemen
     View v;
     public Sub1ProfileFragment() {}
 
-
-
-
     ImageView iv_main, iv_profile, iv_profile2, iv_profile3, iv_profile4, iv_profile5, iv_profile6;
     TextView tv_live, tv_live_check, tv_nickname_check;
     EditText et_nickname, et_job, et_introduce;
@@ -539,10 +536,6 @@ public class Sub1ProfileFragment extends androidx.fragment.app.Fragment implemen
         }
     }
 
-
-
-
-
     /** 수정된 이미지를 서버에 업로드 **/
     class EditImgTask extends AsyncTask<String, Void, String> {
 
@@ -550,8 +543,6 @@ public class Sub1ProfileFragment extends androidx.fragment.app.Fragment implemen
         public EditImgTask(String path) {
             this.Path = path;
         }
-
-
 
         String key = Util.keyMaker();
         String CurrentId = CurrentUserManager.getCurrentUserId(getActivity());
@@ -561,7 +552,6 @@ public class Sub1ProfileFragment extends androidx.fragment.app.Fragment implemen
             super.onPreExecute();
             Log.d("testing", "PreExecute");
         }
-
 
         @Override
         protected String doInBackground(String... strings) {
